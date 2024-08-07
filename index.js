@@ -11,10 +11,8 @@ app.use(express.json());
 
 // Short URL redirect route (place this before other routes)
 app.get("/:id", fetchController);
-
 // API routes
 app.use("/api/v1", urlRouter);
-
 // 404 handler
 app.use((req, res, next) => {
   res.status(404).json({ message: "Not Found" });
