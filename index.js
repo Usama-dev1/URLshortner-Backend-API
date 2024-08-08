@@ -2,12 +2,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const urlRouter = require("./routes/urlRoutes");
 const { fetchController } = require("./controllers/urlController");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+// Home route
+
 
 // Short URL redirect route (place this before other routes)
 app.get("/:id", fetchController);
@@ -15,7 +20,7 @@ app.get("/:id", fetchController);
 app.use("/api/v1", urlRouter);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the API");
+  res.sendFile(path.join(__dirname, "public", "static.html"));
 });
 // Error handling middleware
 app.use((err, req, res, next) => {
