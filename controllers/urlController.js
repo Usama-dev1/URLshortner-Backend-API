@@ -55,7 +55,7 @@ const fetchController = async (req, res, next) => {
 
 const fetchAllController = async (req, res) => {
   try {
-    const allLinks = await URL.find({});
+    const allLinks = await URL.find({}).sort({ createdAt: -1 });;
     res.status(200).json(allLinks);
   } catch (error) {
     console.error("Error fetching all links:", error);
