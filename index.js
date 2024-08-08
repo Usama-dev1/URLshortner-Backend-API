@@ -14,16 +14,14 @@ app.get("/:id", fetchController);
 // API routes
 app.use("/api/v1", urlRouter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the API");
-});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res
     .status(err.statusCode || 500)
     .json({ message: err.message || "Internal Server Error" });
-});
+})
+
 
 mongoose
   .connect(process.env.MONGOO_URI)
