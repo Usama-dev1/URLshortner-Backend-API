@@ -1,12 +1,57 @@
-   <!DOCTYPE html>
+ <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Welcome</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          color: #333;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+        }
+        h1 {
+          color: #007bff;
+          margin-top: 50px;
+        }
+        p {
+          font-size: 18px;
+          margin-top: 10px;
+        }
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80vh;
+          flex-direction: column;
+        }
+        .contact {
+          margin-top: 20px;
+          font-size: 16px;
+        }
+        .contact a {
+          color: #007bff;
+          text-decoration: none;
+        }
+        .contact a:hover {
+          text-decoration: underline;
+        }
+      </style>
     </head>
     <body>
-      <h1>Welcome to the API</h1>
-      <p>This is a static HTML response.</p>
+      <div class="container">
+        <div>
+          <h1>Welcome to the API</h1>
+          <p>This is a static HTML response with inline CSS.</p>
+          <div class="contact">
+            <p>If you have any questions or need to use the API, please contact us at: 
+              <a href="mailto:rajauamadev@gmail.com">rajauamadev@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
     </body>
     </html>
