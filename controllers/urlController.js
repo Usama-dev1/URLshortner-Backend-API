@@ -52,4 +52,17 @@ const fetchController = async (req, res, next) => {
     next(error);
   }
 };
-module.exports = { shortenController,fetchController };
+
+const fetchAllController = async (req, res) => {
+  try {
+    const allLinks = await URL.find({});
+    res.status(200).json({ allLinks });
+  } catch (error) {
+    console.error("Error fetching all links:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while fetching the links." });
+  }
+};
+
+module.exports = { shortenController, fetchController,fetchAllController };

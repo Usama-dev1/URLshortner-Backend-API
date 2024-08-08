@@ -1,5 +1,8 @@
 const express = require("express");
-const { shortenController } = require("../controllers/urlController");
+const {
+  shortenController,
+  fetchAllController,
+} = require("../controllers/urlController");
 const urlRouter = express.Router();
 
 urlRouter.post("/shorten", shortenController);
@@ -12,9 +15,6 @@ urlRouter.get("/test", (req, res) => {
   res.send("Test route is working!");
 });
 
-
-// Define other API routes here
-
-// 404 Handler
+urlRouter.get("/all", fetchAllController);
 
 module.exports = urlRouter;

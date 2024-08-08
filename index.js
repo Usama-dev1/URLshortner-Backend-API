@@ -11,12 +11,11 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Home route
 
-
-// Short URL redirect route (place this before other routes)
+// Short URL redirect route 
 app.get("/:id", fetchController);
 // API routes
+
 app.use("/api/v1", urlRouter);
 
 app.get("/", (req, res) => {
