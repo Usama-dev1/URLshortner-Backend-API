@@ -17,12 +17,6 @@ app.use("/api/v1", urlRouter);
 app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
-
-// 404 handler
-app.use((req, res, next) => {
-  res.status(404).json({ message: "Not Found" });
-});
-
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
