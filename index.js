@@ -10,9 +10,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(
-  cors({
-    origin: "https://url-shortner-backend-omega.vercel.app/",
-  })
+  cors()
 );
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
