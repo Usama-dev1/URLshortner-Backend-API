@@ -11,9 +11,7 @@ urlRouter.delete("/delete/:shortId", (req, res) => {
 urlRouter.get("/test", (req, res) => {
   res.send("Test route is working!");
 });
-urlRouter.get("/", (req, res) => {
-  res.send("Welcome to the API");
-});
+
 
 // Define other API routes here
 

@@ -13,6 +13,11 @@ app.use(express.json());
 app.get("/:id", fetchController);
 // API routes
 app.use("/api/v1", urlRouter);
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
+
 app.use((req, res, next) => {
   res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 });
