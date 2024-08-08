@@ -14,6 +14,9 @@ app.get("/:id", fetchController);
 // API routes
 app.use("/api/v1", urlRouter);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the API");
+});
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
